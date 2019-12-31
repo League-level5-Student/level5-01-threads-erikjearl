@@ -1,5 +1,6 @@
 package _01_Olympic_Rings;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 
 import org.jointheleague.graphical.robot.Robot;
@@ -11,7 +12,7 @@ public class OlympicRings_Threaded {
 		Robot r2 = new Robot(400, 600);
 		Robot r3 = new Robot(600, 300);
 		Robot r4 = new Robot(850, 600);
-		Robot r5 = new Robot(1000, 300);
+		Robot r5 = new Robot(1050, 300);
 		
 		r1.setSpeed(10);
 		r1.penDown();
@@ -29,6 +30,7 @@ public class OlympicRings_Threaded {
 		
 		Thread m1 = new Thread(()->{
 			for(int i = 0; i < 20; i++) {
+				r1.setPenColor(Color.red);
 				r1.move(75);
 				r1.turn(20);
 			}
@@ -36,6 +38,7 @@ public class OlympicRings_Threaded {
 		
 		Thread m2 = new Thread(()->{
 			for(int i = 0; i < 20; i++) {
+				r2.setPenColor(Color.blue);
 				r2.move(75);
 				r2.turn(20);
 			}
@@ -44,6 +47,7 @@ public class OlympicRings_Threaded {
 		
 		Thread m3 = new Thread(()->{
 			for(int i = 0; i < 20; i++) {
+				r3.setPenColor(Color.green);
 				r3.move(75);
 				r3.turn(20);
 			}
@@ -51,6 +55,7 @@ public class OlympicRings_Threaded {
 		
 		Thread m4 = new Thread(()->{
 			for(int i = 0; i < 20; i++) {
+				r4.setPenColor(Color.black);
 				r4.move(75);
 				r4.turn(20);
 			}
@@ -58,6 +63,7 @@ public class OlympicRings_Threaded {
 		
 		Thread m5 = new Thread(()->{
 			for(int i = 0; i < 20; i++) {
+				r5.setPenColor(Color.yellow);
 				r5.move(75);
 				r5.turn(20);
 			}
