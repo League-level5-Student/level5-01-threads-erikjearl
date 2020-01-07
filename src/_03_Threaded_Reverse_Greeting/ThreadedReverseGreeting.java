@@ -17,12 +17,17 @@ public class ThreadedReverseGreeting {
 		Thread t = new Thread();
 		if(count <= 50) {
 			t = new Thread(()->{	
-				makeThread(count+1);		
+				makeThread(count+1);
 				System.out.println("Hello from Thread " + count + "!");
 			});
 		}
 		t.start();
-		
+		try {
+			t.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	
